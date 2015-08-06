@@ -30,6 +30,7 @@ bash: clean
 run: clean
 	docker run $(DOCKER_ARGS) --name $(NAME) --env-file .env \
 	  $(IMAGE)
+	docker logs $(NAME)
 
 clean:
 	@docker rm -f $(NAME) &>/dev/null || true
